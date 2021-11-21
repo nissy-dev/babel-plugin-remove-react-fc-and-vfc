@@ -5,26 +5,26 @@ pluginTester({
   plugin: myPlugin,
   babelOptions: {
     parserOpts: {
-      // If you want to parse typescript or jsx, these plugins are required
       plugins: ["jsx", "typescript"],
     },
   },
   filename: __filename,
-  pluginOptions: {
-    option1: true,
-  },
   tests: {
-    "basic test": {
-      code: 'var a = "test";',
-      output: 'const a = "test";',
+    "minimum test case": {
+      code: `
+const A: React.FC<Props> = (props) => {
+  return <div>"test"</div>;
+};
+      `,
+      output: `
+const A = (props: Props) => {
+  return <div>"test"</div>;
+};
+      `,
     },
-    "basic test using files": {
-      fixture: "__fixtures__/sample.js",
-      outputFixture: "__fixtures__/sample-out.js",
-    },
-    "snapshot test": {
-      code: 'var a = "test";',
-      snapshot: true,
+    "general test case": {
+      fixture: "__fixtures__/sample.tsx",
+      outputFixture: "__fixtures__/sample-out.tsx",
     },
   },
 });

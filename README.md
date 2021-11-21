@@ -1,60 +1,49 @@
-This is template repository for babel plugin development with TypeScript.
+# babel-plugin-remove-react-fc-and-vfc
 
-1. Create repository based on this template
-2. Change plugin name from babel-plugin-ts-template to your own
-3. Modify TODO comments
-4. Add NPM_TOKEN to repository secrets
+![release](https://github.com/nissy-dev/babel-plugin-remove-react-fc-and-vfc/actions/workflows/release.yml/badge.svg)
+[![License: MIT](https://img.shields.io/github/license/nissy-dev/babel-plugin-remove-react-fc-and-vfc.svg)](https://opensource.org/licenses/MIT)
+[![npm version](https://badge.fury.io/js/babel-plugin-remove-react-fc-and-vfc.svg)](https://badge.fury.io/js/babel-plugin-remove-react-fc-and-vfc)
 
----
-
-# babel-plugin-ts-template
-
-![release](https://github.com/nissy-dev/babel-plugin-ts-template/actions/workflows/release.yml/badge.svg)
-[![License: MIT](https://img.shields.io/github/license/nissy-dev/babel-plugin-ts-template.svg)](https://opensource.org/licenses/MIT)
-[![npm version](https://badge.fury.io/js/babel-plugin-ts-template.svg)](https://badge.fury.io/js/babel-plugin-ts-template)
-
-TODO: write some description
+This plugin removes `React.VFC` and `React.FC` annotation.
 
 Input:
 
 ```ts
-var a = "test";
+const Component: React.FC<Props> = (props) => {
+  return <div>{props.value}</div>;
+};
 ```
 
 Output:
 
 ```ts
-const a = "test";
+const Component = (props: Props) => {
+  return <div>{props.value}</div>;
+};
 ```
+
+## Why?
+
+As `React.XXX` is modified frequently like [`React.SFC` was removed](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/30364) or [the children type will be removed from React.FC](https://github.com/DefinitelyTyped/DefinitelyTyped/issues/46691), I think we should not use `React.XXX` type as much as possible.
+
+See more details
+
+- [Remove React.FC from Typescript template](https://github.com/facebook/create-react-app/pull/8177)
+- [【検証】React.FC と React.VFC はべつに使わなくていい説](https://kray.jp/blog/dont-have-to-use-react-fc-and-react-vfc/)
 
 ## Install
 
 ```bash
-$ npm install --save-dev babel-plugin-ts-template
+$ npm install --save-dev babel-plugin-remove-react-fc-and-vfc
 ```
 
 and add it to your `.babelrc`.
 
 ```json
 {
-  "plugins": [
-    [
-      "ts-template",
-      {
-        "option1": true
-      }
-    ]
-  ]
+  "plugins": ["remove-react-fc-and-vfc"]
 }
 ```
-
-## Options
-
-### `option1`
-
-boolean, defaults to false
-
-TODO: write some description
 
 ## Contributing
 
@@ -65,8 +54,8 @@ See also [Babel Plugin Handbook](https://github.com/jamiebuilds/babel-handbook/b
 ## Setup
 
 ```
-$ git clone git@github.com:nissy-dev/babel-plugin-ts-template.git
-$ cd babel-plugin-ts-template
+$ git clone git@github.com:nissy-dev/babel-plugin-remove-react-fc-and-vfc.git
+$ cd babel-plugin-remove-react-fc-and-vfc
 $ npm ci
 ```
 

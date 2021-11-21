@@ -1,7 +1,7 @@
 {
-  "name": "babel-plugin-ts-template",
-  "description": "TODO: write some description",
-  "version": "0.0.1",
+  "name": "babel-plugin-remove-react-fc-and-vfc",
+  "description": "This plugin removes React.VFC and React.FC annotation",
+  "version": "0.2.0",
   "main": "dist/index.js",
   "files": [
     "dist",
@@ -10,16 +10,16 @@
   ],
   "author": "nissy-dev <nd.12021218@gmail.com> (https://github.com/nissy-dev)",
   "bugs": {
-    "url": "https://github.com/nissy-dev/babel-plugin-ts-template/issues"
+    "url": "https://github.com/nissy-dev/babel-plugin-remove-react-fc-and-vfc/issues"
   },
-  "homepage": "https://github.com/nissy-dev/babel-plugin-ts-template",
+  "homepage": "https://github.com/nissy-dev/babel-plugin-remove-react-fc-and-vfc",
   "keywords": [
     "babel-plugin"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nissy-dev/babel-plugin-ts-template.git"
+    "url": "git+https://github.com/nissy-dev/babel-plugin-remove-react-fc-and-vfc.git"
   },
   "scripts": {
     "prepare": "git config --local core.hooksPath .githooks",
