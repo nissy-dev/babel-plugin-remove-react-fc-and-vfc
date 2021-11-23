@@ -33,7 +33,7 @@ See more details
 
 ## Install
 
-```bash
+```sh
 $ npm install --save-dev babel-plugin-remove-react-fc-and-vfc
 ```
 
@@ -53,7 +53,7 @@ See also [Babel Plugin Handbook](https://github.com/jamiebuilds/babel-handbook/b
 
 ## Setup
 
-```
+```sh
 $ git clone git@github.com:nissy-dev/babel-plugin-remove-react-fc-and-vfc.git
 $ cd babel-plugin-remove-react-fc-and-vfc
 $ npm ci
@@ -61,7 +61,7 @@ $ npm ci
 
 ## Development Tools
 
-```
+```sh
 // run tsc, eslint, prettier
 $ npm run lint
 
